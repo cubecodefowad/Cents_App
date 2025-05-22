@@ -16,7 +16,7 @@ A modern, minimalist budget tracking application built with React, Node.js, and 
 
 - Frontend: React.js with Tailwind CSS
 - Backend: Node.js with Express
-- Database: MongoDB
+- Database: SQLite (no external account needed)
 - Charts: Chart.js
 - Icons: Heroicons
 
@@ -25,37 +25,36 @@ A modern, minimalist budget tracking application built with React, Node.js, and 
 Before you begin, ensure you have the following installed:
 - Node.js (v14 or higher)
 - npm (v6 or higher)
-- MongoDB (if using local database)
+- Python 3.11+ (for optional data analysis)
 
 ## Installation
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/cents-app.git
-cd cents-app
+git clone https://github.com/cubecodefowad/Cents_App.git
+cd Cents_App
 ```
 
 2. Install dependencies:
 ```bash
-# Install server dependencies
+# Install backend dependencies
 npm install
 
-# Install client dependencies
+# Install frontend dependencies
 cd client
 npm install
 ```
 
-3. Create a `.env` file in the root directory:
-```env
-PORT=5000
-MONGODB_URI=your_mongodb_uri
+3. (Optional) Install Python dependencies for data analysis:
+```bash
+pip install -r requirements.txt
 ```
 
 4. Start the development servers:
 
 ```bash
 # Start the backend server (from root directory)
-npm run server
+npm run dev
 
 # Start the frontend development server (from client directory)
 cd client
@@ -67,16 +66,18 @@ The application will be available at `http://localhost:3000`
 ## Project Structure
 
 ```
-cents-app/
+Cents_App/
 ├── client/                 # React frontend
 │   ├── public/            # Static files
 │   └── src/               # Source files
 │       ├── components/    # React components
 │       ├── App.js         # Main App component
 │       └── index.js       # Entry point
-├── server.js              # Backend server
+├── server.js              # Backend server (Express + SQLite)
 ├── package.json           # Project dependencies
-└── README.md             # Project documentation
+├── requirements.txt       # Python analysis dependencies
+├── analyze_expenses.py    # Python analysis script
+└── README.md              # Project documentation
 ```
 
 ## Contributing
